@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-
+import './my_button.dart';
+import './square.dart';
+import './textfield.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -15,7 +17,8 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(title: Text('MindMate'),
+      appBar: AppBar(
+        title: Text('MindMate'),
       ),
       body: SafeArea(
         child: Center(
@@ -25,12 +28,11 @@ class LoginPage extends StatelessWidget {
               const SizedBox(height: 50),
 
               // logo
-             
 
               const SizedBox(height: 50),
 
               // welcome back, you've been missed!
-              Text(
+              const Text(
                 'Welcome back you\'ve been missed!',
                 style: TextStyle(
                   color: Colors.white,

@@ -8,18 +8,22 @@ class Slide1 extends StatelessWidget {
     return Container(
       child: Column(
         children: const [
-          SizedBox(
-            height: 45,
-          ),
+          // SizedBox(
+          //   height: 25,
+          // ),
           Text(
-            "Hey... \nI am MindMate",
+            "Hey ... ",
             style: TextStyle(
-              fontSize: 45,
+              fontSize: 35,
             ),
           ),
-          Image(
-              image: NetworkImage(
-                  "https://design.vectr.com/images/tutorials/what-are-vector-graphics/raster-vs-vector.png")),
+          Text(
+            "I am MindMate",
+            style: TextStyle(
+              fontSize: 25,
+            ),
+          ),
+          Image(image: AssetImage("./assets/logo.png")),
         ],
       ),
     );
@@ -34,15 +38,14 @@ class Slide2 extends StatelessWidget {
     return Container(
       child: Column(
         children: const [
-          SizedBox(
-            height: 145,
-          ),
           Text(
-            "Text2",
+            "Your All Time Companion",
             style: TextStyle(
-              fontSize: 45,
-              fontWeight: FontWeight.bold,
+              fontSize: 25,
             ),
+          ),
+          SizedBox(
+            height: 20,
           ),
           Image(
               image: NetworkImage(
@@ -61,15 +64,15 @@ class Slide3 extends StatelessWidget {
     return Container(
       child: Column(
         children: const [
-          SizedBox(
-            height: 145,
-          ),
           Text(
-            "Text3",
+            "The only Application \nyou need for health",
             style: TextStyle(
-              fontSize: 45,
-              fontWeight: FontWeight.bold,
+              fontSize: 25,
+              // fontWeight: FontWeight.bold,
             ),
+          ),
+          SizedBox(
+            height: 20,
           ),
           Image(
               image: NetworkImage(
