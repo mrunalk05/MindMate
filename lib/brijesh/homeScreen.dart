@@ -1,5 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:mindmate/brijesh/mainMenu.dart';
+import 'package:mindmate/brijesh/resources.dart';
 import 'package:mindmate/brijesh/tips.dart';
 
 import '../anushka/eqtest.dart';
@@ -126,7 +128,7 @@ class _HomeScreenState extends State<HomeScreen> {
               case 0:
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const ChatScreen()),
+                  MaterialPageRoute(builder: (context) => const HomeScreen()),
                 );
                 break;
               case 1:
@@ -138,13 +140,13 @@ class _HomeScreenState extends State<HomeScreen> {
               case 2:
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => QuizScreen()),
+                  MaterialPageRoute(builder: (context) => Resources()),
                 );
                 break;
               case 3:
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const ChatScreen()),
+                  MaterialPageRoute(builder: (context) => const MainMenu()),
                 );
                 break;
               case 4:
@@ -165,12 +167,12 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.monitor_heart),
-            label: "EQ Test",
+            label: "Resources",
             backgroundColor: Colors.white,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: "ChatBot",
+            label: "MainMenu",
             backgroundColor: Colors.white,
           ),
           // BottomNavigationBarItem(icon: Icon(Icons.cloud),label: "Loading",backgroundColor: Colors.blueAccent,),

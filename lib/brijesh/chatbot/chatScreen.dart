@@ -34,12 +34,16 @@ class _ChatScreenState extends State<ChatScreen> {
     super.dispose();
   }
 
-  // Link for api - https://beta.openai.com/account/api-keys
-
-  void _sendMessage() async {
-    if (_controller.text.isEmpty) return;
+  void _summarizeMessage() async {
+    String chats = "";
+    if (_messages.isEmpty) return;
+    for (ChatMessage msg in _messages) {
+      chats = "${msg.sender} : ${msg.text}" + chats;
+    }
+    print(chats);
     ChatMessage message = ChatMessage(
-      text: _controller.text,
+      text:
+          "Summarize this conversation and predict the : 1) user mental condition ans 2) brief me about the conversation. \"$chats\"",
       sender: "user",
       isImage: false,
     );
@@ -67,10 +71,44 @@ class _ChatScreenState extends State<ChatScreen> {
     }
   }
 
+  // Link for api - https://beta.openai.com/account/api-keys
+
+  void _sendMessage() async {
+    if (_controller.text.isEmpty) return;
+    ChatMessage message = ChatMessage(
+      text: _controller.text,
+      sender: "user ",
+      isImage: false,
+    );
+
+    setState(() {
+      _messages.insert(0, message);
+      _isTyping = true;
+    });
+
+    _controller.clear();
+
+    if (_isImageSearch) {
+      final request = GenerateImage(message.text, 1, size: "256x256");
+
+      final response = await chatGPT!.generateImage(request);
+      Vx.log(response!.data!.last!.url!);
+      insertNewData(response.data!.last!.url!, isImage: true);
+    } else {
+      final request =
+          CompleteText(prompt: message.text, model: kTranslateModelV3);
+
+      final response = await chatGPT!.onCompleteText(request: request);
+      Vx.log(response!.choices[0].text);
+      // print(response!.choices[0].text);
+      insertNewData(response.choices[0].text, isImage: false);
+    }
+  }
+
   void insertNewData(String response, {bool isImage = false}) {
     ChatMessage botMessage = ChatMessage(
       text: response,
-      sender: "bot",
+      sender: "MindMate ",
       isImage: isImage,
     );
 
@@ -100,6 +138,12 @@ class _ChatScreenState extends State<ChatScreen> {
                 _sendMessage();
               },
             ),
+            TextButton(
+                onPressed: () {
+                  _isImageSearch = false;
+                  _summarizeMessage();
+                },
+                child: const Text("Conclude Chat"))
             // TextButton(
             //     onPressed: () {
             //       _isImageSearch = true;

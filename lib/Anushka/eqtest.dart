@@ -22,7 +22,7 @@ class _QuizScreenState extends State<QuizScreen> {
         child:
             Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
           const Text(
-            "Simple Quiz App",
+            "EQ Test",
             style: TextStyle(
               color: Color(0xFFAA77FF),
               fontSize: 24,
@@ -153,10 +153,12 @@ class _QuizScreenState extends State<QuizScreen> {
       //isPassed = true;
 
       title = "You Are Absoutely Fine!";
-    } else if (score < questionList.length * 0.65) {
-      title = "You Are well but you need to have some Meditation in your DailyRoutine!";
+    } else if (score >= questionList.length * 0.45) {
+      title =
+          "You Are well but you need to have some Meditation in your DailyRoutine! please checkout our resources tab for more help";
     } else {
-      title = "You need to focus on your Mental Health!";
+      title =
+          "You need to focus on your Mental Health! consider discussing your problems with family or doctor. please also checkout our MindMate AI bot for friendly conversation and getting relaxed";
     }
     //String title = isPassed ? "You are  " : "Failed";
 

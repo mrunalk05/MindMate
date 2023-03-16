@@ -5,14 +5,15 @@ class Slide1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Center(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
         children: const [
           // SizedBox(
           //   height: 25,
           // ),
           Text(
-            "Hey ... ",
+            "Hey there.. ",
             style: TextStyle(
               fontSize: 35,
             ),
@@ -35,8 +36,10 @@ class Slide2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Center(
       child: Column(
+        // crossAxisAlignment: CrossAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: const [
           Text(
             "Your All Time Companion",
@@ -47,9 +50,7 @@ class Slide2 extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          Image(
-              image: NetworkImage(
-                  "https://design.vectr.com/images/tutorials/what-are-vector-graphics/raster-vs-vector.png")),
+          Image(image: AssetImage("assets/img2jpeg.jpeg")),
         ],
       ),
     );
@@ -61,8 +62,9 @@ class Slide3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Center(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
         children: const [
           Text(
             "The only Application \nyou need for health",
@@ -74,9 +76,7 @@ class Slide3 extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          Image(
-              image: NetworkImage(
-                  "https://design.vectr.com/images/tutorials/what-are-vector-graphics/raster-vs-vector.png")),
+          Image(image: AssetImage("assets/img3.jpg")),
         ],
       ),
     );

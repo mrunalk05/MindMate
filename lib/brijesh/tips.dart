@@ -1,5 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:mindmate/brijesh/homeScreen.dart';
+import 'package:mindmate/brijesh/mainMenu.dart';
+import 'package:mindmate/brijesh/resources.dart';
 
 import '../anushka/eqtest.dart';
 // import '../utkarsha/bottomNavigationbar.dart';
@@ -13,9 +16,17 @@ class Tips extends StatefulWidget {
 }
 
 class _TipsState extends State<Tips> {
-  int navigationIndex = 0;
+  int navigationIndex = 1;
   @override
   Widget build(BuildContext context) {
+    // var tipList = [
+    //   "Get enough sleep: Adequate sleep is essential for both physical and mental health. Try to get at least 7-8 hours of sleep every night.",
+    //   "Exercise regularly: Regular exercise can help reduce stress and improve mood. Find an activity you enjoy and make it a regular part of your routine.",
+    //   "Practice mindfulness and relaxation techniques: Activities such as meditation, deep breathing, and yoga can help reduce stress and promote relaxation.",
+    //   "Manage your time effectively: Make a to-do list, prioritize your tasks, and schedule your day to manage your time efficiently.",
+    //   "Maintain a healthy diet: Eating a balanced and nutritious diet can help improve mood and energy levels, reducing stress.",
+    //   "Take breaks and prioritize self-care: It's essential to take regular breaks and prioritize self-care activities such as taking a bath, reading a book, or spending time with loved ones."
+    // ];
     return Scaffold(
       appBar: AppBar(
         title: const Text("Tips"),
@@ -25,38 +36,106 @@ class _TipsState extends State<Tips> {
         //     image: DecorationImage(
         //         image: AssetImage("assets/back.jpg"), fit: BoxFit.fill)),
         child: SingleChildScrollView(
-          child: Column(
-            children: [
-              CarouselSlider(
-                options: CarouselOptions(height: 200.0),
-                items: [
-                  "\"Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle.\" - Christian D. Larson",
-                  "\"The only way to do great work is to love what you do.\" - Steve Jobs",
-                  "\"Worrying does not empty tomorrow of its troubles, it empties today of its strength.\" - Corrie Ten Boom",
-                  "\"Every experience in your life is being orchestrated to teach you something you need to know to move forward.\" - Brian Tracy",
-                  "\"The best way out is always through.\" - Robert Frost"
-                ].map((i) {
-                  return Builder(
-                    builder: (BuildContext context) {
-                      return Card(
-                        color: Colors.blue.shade100,
-                        elevation: 5,
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Center(
-                              child: Text(
-                            i,
-                            textAlign: TextAlign.center,
-                            style: const TextStyle(fontWeight: FontWeight.w600),
-                            textScaleFactor: 1.3,
-                          )),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: const [
+                        Image(image: AssetImage("assets/1.png")),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(
+                              "Get enough sleep: Adequate sleep is essential for both physical and mental health. Try to get at least 7-8 hours of sleep every night."),
                         ),
-                      );
-                    },
-                  );
-                }).toList(),
-              ),
-            ],
+                      ],
+                    ),
+                  ),
+                ),
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: const [
+                        Image(image: AssetImage("assets/2.jpg")),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(
+                            "Exercise regularly: Regular exercise can help reduce stress and improve mood. Find an activity you enjoy and make it a regular part of your routine.",
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: const [
+                        Image(image: AssetImage("assets/3.jpg")),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(
+                            "Practice mindfulness and relaxation techniques: Activities such as meditation, deep breathing, and yoga can help reduce stress and promote relaxation.",
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: const [
+                        Image(image: AssetImage("assets/4.jpg")),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(
+                            "Manage your time effectively: Make a to-do list, prioritize your tasks, and schedule your day to manage your time efficiently.",
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: const [
+                        Image(image: AssetImage("assets/5.jfif.jpg")),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(
+                            "Maintain a healthy diet: Eating a balanced and nutritious diet can help improve mood and energy levels, reducing stress.",
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                // Card(
+                //   child: Padding(
+                //     padding: const EdgeInsets.all(8.0),
+                //     child: Column(
+                //       children: const [
+                //         Image(image: AssetImage("assets/6.jpg"), width: 300),
+                //         Padding(
+                //           padding: EdgeInsets.all(8.0),
+                //           child: Text(
+                //               "Take breaks and prioritize self-care: It's essential to take regular breaks and prioritize self-care activities such as taking a bath, reading a book, or spending time with loved ones."),
+                //         ),
+                //       ],
+                //     ),
+                //   ),
+                // ),
+              ],
+            ),
           ),
         ),
       ),
@@ -73,25 +152,25 @@ class _TipsState extends State<Tips> {
               case 0:
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const ChatScreen()),
+                  MaterialPageRoute(builder: (context) => const HomeScreen()),
                 );
                 break;
               case 1:
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => ChatScreen()),
+                  MaterialPageRoute(builder: (context) => Tips()),
                 );
                 break;
               case 2:
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => QuizScreen()),
+                  MaterialPageRoute(builder: (context) => Resources()),
                 );
                 break;
               case 3:
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const ChatScreen()),
+                  MaterialPageRoute(builder: (context) => const MainMenu()),
                 );
                 break;
               case 4:
@@ -107,17 +186,17 @@ class _TipsState extends State<Tips> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.apps_rounded),
-            label: "ChatBot",
+            label: "Tips",
             backgroundColor: Colors.white,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.monitor_heart),
-            label: "EQ Test",
+            label: "Resources",
             backgroundColor: Colors.white,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: "Profile",
+            label: "MainMenu",
             backgroundColor: Colors.white,
           ),
           // BottomNavigationBarItem(icon: Icon(Icons.cloud),label: "Loading",backgroundColor: Colors.blueAccent,),

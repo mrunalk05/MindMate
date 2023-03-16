@@ -39,6 +39,11 @@ class _SliderShowState extends State<SliderShow> {
             ),
             const ThreeDots(),
             ElevatedButton(
+                style: const ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll(Colors.green),
+                  elevation: MaterialStatePropertyAll(0),
+                  shape: MaterialStatePropertyAll(OvalBorder()),
+                ),
                 onPressed: () => {
                       Navigator.pushAndRemoveUntil(
                           context,
