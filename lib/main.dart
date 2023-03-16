@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+
 import 'Anushka/eqTest.dart';
+import 'brijesh/slider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -50,7 +52,16 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ElevatedButton( onPressed: () => {
           Navigator.push(context, MaterialPageRoute(builder: (context) => QuizScreen(),))
-        }, child: Text("EQTest"))
+        }, child: Text("EQTest")),
+            ElevatedButton(
+                onPressed: () => {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SliderShow(),
+                          ))
+                    },
+                child: Text("SlideShow")),
           ],
         ),
       ),
