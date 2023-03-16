@@ -52,11 +52,12 @@ packages:
   chat_gpt_sdk:
     dependency: "direct main"
     description:
-      name: chat_gpt_sdk
-      sha256: "7c43dd508d3e70ea4bbf237721992c631b094d2ea5744b2d8b56c7cb5003e455"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.0"
+      path: "."
+      ref: HEAD
+      resolved-ref: "7e6565831cd9b8b74a7b376042f952d6c54bea60"
+      url: "https://github.com/iampawan/Flutter-ChatGPT.git"
+    source: git
+    version: "1.0.2+4"
   clock:
     dependency: transitive
     description:

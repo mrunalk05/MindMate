@@ -26,8 +26,9 @@ class _SliderShowState extends State<SliderShow> {
                   builder: (BuildContext context) {
                     return Container(
                         width: MediaQuery.of(context).size.width,
-                        margin: EdgeInsets.symmetric(horizontal: 5.0),
-                        decoration: BoxDecoration(color: Colors.transparent),
+                        margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                        decoration:
+                            const BoxDecoration(color: Colors.transparent),
                         child: i);
                   },
                 );
@@ -39,11 +40,10 @@ class _SliderShowState extends State<SliderShow> {
             const ThreeDots(),
             ElevatedButton(
                 onPressed: () => {
-                      Navigator.push(
+                      Navigator.pushAndRemoveUntil(
                           context,
-                          MaterialPageRoute(
-                            builder: (context) => LoginPage(),
-                          ))
+                          MaterialPageRoute(builder: (context) => LoginPage()),
+                          (route) => (route.isFirst))
                     },
                 child: const Text("Skip")),
             const SizedBox(

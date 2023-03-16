@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+// import 'package:mindmate/brijesh/chatbot/chatScreen.dart';
+import 'package:mindmate/brijesh/homeScreen.dart';
 import './my_button.dart';
 import './square.dart';
 import './textfield.dart';
@@ -18,7 +20,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('MindMate'),
+        title: const Text('MindMate'),
       ),
       body: SafeArea(
         child: Center(
@@ -78,9 +80,15 @@ class LoginPage extends StatelessWidget {
 
               // sign in button
               MyButton(
-                onTap: signUserIn,
+                onTap: () => {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const HomeScreen(),
+                      ))
+                },
               ),
-
+              // ElevatedButton(onPressed: ()=>{}, child: Text("SignIn")),
               const SizedBox(height: 50),
 
               // or continue with

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mindmate/anushka/eqtest.dart';
+import 'package:mindmate/brijesh/chatbot/chatScreen.dart';
 
 class BottonNav extends StatefulWidget {
   const BottonNav({Key? key}) : super(key: key);
@@ -25,25 +27,25 @@ class _BottonNavState extends State<BottonNav> {
             case 0:
               Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(builder: (context) => const AppBody()),
+                  MaterialPageRoute(builder: (context) => const ChatScreen()),
                   (route) => (route.isFirst));
               break;
             case 1:
               Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(builder: (context) => const AllApps()),
+                  MaterialPageRoute(builder: (context) => QuizScreen()),
                   (route) => (route.isFirst));
               break;
             case 2:
               Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(builder: (context) => ShowActivities()),
+                  MaterialPageRoute(builder: (context) => QuizScreen()),
                   (route) => (route.isFirst));
               break;
             case 3:
               Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(builder: (context) => const Profile()),
+                  MaterialPageRoute(builder: (context) => const ChatScreen()),
                   (route) => (route.isFirst));
               break;
             case 4:
@@ -54,23 +56,23 @@ class _BottonNavState extends State<BottonNav> {
       items: const [
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
-          label: "Home",
-          backgroundColor: primaryColor,
+          label: "Info",
+          backgroundColor: Colors.white,
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.apps_rounded),
-          label: "All APPS",
-          backgroundColor: primaryColor,
+          label: "ChatBot",
+          backgroundColor: Colors.white,
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.monitor_heart),
-          label: "Activities",
-          backgroundColor: primaryColor,
+          label: "EQ Test",
+          backgroundColor: Colors.white,
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.person),
           label: "Profile",
-          backgroundColor: primaryColor,
+          backgroundColor: Colors.white,
         ),
         // BottomNavigationBarItem(icon: Icon(Icons.cloud),label: "Loading",backgroundColor: Colors.blueAccent,),
       ],
