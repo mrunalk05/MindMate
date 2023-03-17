@@ -6,8 +6,8 @@ import './my_button.dart';
 import './square.dart';
 import './textfield.dart';
 
-class LoginPage extends StatelessWidget {
-  LoginPage({super.key});
+class DoctorLoginPage extends StatelessWidget {
+  DoctorLoginPage({super.key});
 
   // text editing controllers
   final usernameController = TextEditingController();
@@ -34,10 +34,9 @@ class LoginPage extends StatelessWidget {
 
                 // logo
                 const Text(
-                  "User's Login",
+                  "Login As Doctor",
                   textScaleFactor: 1.3,
                 ),
-
                 const SizedBox(height: 50),
 
                 // welcome back, you've been missed!

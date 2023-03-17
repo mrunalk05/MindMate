@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:mindmate/brijesh/splashScreen.dart';
+import 'package:mindmate/colors.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
+// void main() {
+//   runApp(const MyApp());
+// }
+var token;
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  token = prefs.getString('token');
   runApp(const MyApp());
 }
 

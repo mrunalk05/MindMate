@@ -4,6 +4,7 @@ import 'package:mindmate/brijesh/assigntreatment.dart';
 import 'package:mindmate/brijesh/chatbot/chatScreen.dart';
 import 'package:mindmate/brijesh/homeScreen.dart';
 import 'package:mindmate/brijesh/resources.dart';
+import 'package:mindmate/brijesh/seeSummary.dart';
 import 'package:mindmate/brijesh/suggestions.dart';
 import 'package:mindmate/brijesh/tips.dart';
 
@@ -17,7 +18,7 @@ class MainMenu extends StatefulWidget {
 class _MainMenuState extends State<MainMenu> {
   @override
   Widget build(BuildContext context) {
-    int navigationIndex = 3;
+    int navigationIndex = 1;
     return Scaffold(
       appBar: AppBar(
         title: const Text("MindMate"),
@@ -85,6 +86,48 @@ class _MainMenuState extends State<MainMenu> {
               },
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ListTile(
+              title: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      border: Border.all(width: 1)),
+                  height: 100,
+                  child: const Center(
+                    child: Text("See All Summaries"),
+                  )),
+              onTap: () => {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SeeSummary(),
+                    ))
+              },
+            ),
+          ),
+          // Padding(
+          //   padding: const EdgeInsets.all(8.0),
+          //   child: ListTile(
+          //     title: Container(
+          //         decoration: BoxDecoration(
+          //             borderRadius: BorderRadius.all(Radius.circular(10)),
+          //             border: Border.all(width: 1)),
+          //         height: 100,
+          //         child: const Center(
+          //           child: Text("Assign Treatement"),
+          //         )),
+          //     onTap: () => {
+          //       Navigator.push(
+          //           context,
+          //           MaterialPageRoute(
+          //             builder: (context) => LongAnswerTextField(
+          //               labelText: 'your suggestion',
+          //             ),
+          //           ))
+          //     },
+          //   ),
+          // ),
           // ElevatedButton(
           //     onPressed: () => {
           //           Navigator.push(
@@ -115,19 +158,19 @@ class _MainMenuState extends State<MainMenu> {
               case 1:
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Tips()),
+                  MaterialPageRoute(builder: (context) => const MainMenu()),
                 );
                 break;
               case 2:
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Resources()),
+                  MaterialPageRoute(builder: (context) => const Resources()),
                 );
                 break;
               case 3:
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const MainMenu()),
+                  MaterialPageRoute(builder: (context) => const Tips()),
                 );
                 break;
               case 4:
@@ -142,18 +185,19 @@ class _MainMenuState extends State<MainMenu> {
             backgroundColor: Colors.white,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.apps_rounded),
-            label: "Tips",
+            icon: Icon(Icons.person),
+            label: "MainMenu",
             backgroundColor: Colors.white,
           ),
+
           BottomNavigationBarItem(
             icon: Icon(Icons.monitor_heart),
             label: "Resources",
             backgroundColor: Colors.white,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: "MainMenu",
+            icon: Icon(Icons.apps_rounded),
+            label: "Tips",
             backgroundColor: Colors.white,
           ),
           // BottomNavigationBarItem(icon: Icon(Icons.cloud),label: "Loading",backgroundColor: Colors.blueAccent,),

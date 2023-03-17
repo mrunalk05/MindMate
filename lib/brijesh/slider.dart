@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
+// import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:mindmate/brijesh/threeSlides.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:mindmate/brijesh/threedots.dart';
 import 'package:mindmate/mrunal/login.dart';
+// import 'package:mindmate/mrunal/lib/main.dart';
+// import 'package:mindmate/mrunal/login.dart';
+// import 'package:shared_preferences/shared_preferences.dart';
+//
+// import 'package:mindmate/mrunal/lib/dashboard.dart';
+// import 'package:mindmate/mrunal/lib/loginPage.dart';
+
+// import '../main.dart';
 
 class SliderShow extends StatefulWidget {
   const SliderShow({Key? key}) : super(key: key);
@@ -49,6 +58,24 @@ class _SliderShowState extends State<SliderShow> {
                           context,
                           MaterialPageRoute(builder: (context) => LoginPage()),
                           (route) => (route.isFirst))
+                      // if ((token != null &&
+                      //     JwtDecoder.isExpired(token) == false))
+                      //   {
+                      //     Navigator.pushAndRemoveUntil(
+                      //         context,
+                      //         MaterialPageRoute(
+                      //             builder: (context) =>
+                      //                 Dashboard(token: token)),
+                      //         (route) => (route.isFirst))
+                      //   }
+                      // else
+                      //   {
+                      //     Navigator.pushAndRemoveUntil(
+                      //         context,
+                      //         MaterialPageRoute(
+                      //             builder: (context) => SignInPage()),
+                      //         (route) => (route.isFirst))
+                      //   }
                     },
                 child: const Text("Skip")),
             const SizedBox(

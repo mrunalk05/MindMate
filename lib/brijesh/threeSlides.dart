@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mindmate/mrunal/doctorLogin.dart';
 
 class Slide1 extends StatelessWidget {
   const Slide1({Key? key}) : super(key: key);
@@ -65,18 +66,31 @@ class Slide3 extends StatelessWidget {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
-        children: const [
-          Text(
+        children: [
+          const Text(
             "The only Application \nyou need for health",
             style: TextStyle(
               fontSize: 25,
               // fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          Image(image: AssetImage("assets/img3.jpg")),
+          ElevatedButton(
+              style: const ButtonStyle(
+                elevation: MaterialStatePropertyAll(0),
+                backgroundColor: MaterialStatePropertyAll(Colors.transparent),
+                shadowColor: MaterialStatePropertyAll(Colors.transparent),
+              ),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DoctorLoginPage(),
+                    ));
+              },
+              child: const Image(image: AssetImage("assets/img3.jpg"))),
         ],
       ),
     );

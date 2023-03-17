@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 // import 'package:mindmate/brijesh/chatbot/chatScreen.dart';
+import './register.dart';
 import 'package:mindmate/brijesh/homeScreen.dart';
 import 'package:mindmate/colors.dart';
 import './my_button.dart';
@@ -12,6 +13,8 @@ class LoginPage extends StatelessWidget {
   // text editing controllers
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
+  final emailController = TextEditingController();
+  final ageController = TextEditingController();
 
   // sign user in method
   void signUserIn() {}
@@ -34,7 +37,7 @@ class LoginPage extends StatelessWidget {
 
                 // logo
                 const Text(
-                  "User's Login",
+                  "User's Registration",
                   textScaleFactor: 1.3,
                 ),
 
@@ -60,6 +63,14 @@ class LoginPage extends StatelessWidget {
 
                 const SizedBox(height: 10),
 
+                MyTextField(
+                  controller: emailController,
+                  hintText: 'Email',
+                  obscureText: false,
+                ),
+
+                const SizedBox(height: 10),
+
                 // password textfield
                 MyTextField(
                   controller: passwordController,
@@ -68,7 +79,13 @@ class LoginPage extends StatelessWidget {
                 ),
 
                 const SizedBox(height: 10),
+                MyTextField(
+                  controller: ageController,
+                  hintText: 'Age',
+                  obscureText: false,
+                ),
 
+                const SizedBox(height: 10),
                 // forgot password?
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -167,12 +184,12 @@ class LoginPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Not a member?',
+                      'Already a member?',
                       style: TextStyle(color: Colors.grey[700]),
                     ),
                     const SizedBox(width: 4),
                     const Text(
-                      'Register now',
+                      'Login now',
                       style: TextStyle(
                         color: Colors.blue,
                         fontWeight: FontWeight.bold,

@@ -67,6 +67,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
       final response = await chatGPT!.onCompleteText(request: request);
       Vx.log(response!.choices[0].text);
+      summary.insert(0, response!.choices[0].text);
       insertNewData(response.choices[0].text, isImage: false);
     }
   }

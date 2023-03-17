@@ -60,7 +60,7 @@ class _RegistrationState extends State<Registration> {
         body: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: LinearGradient(
                 colors: [
                   Color.fromARGB(255, 238, 236, 236),
@@ -87,7 +87,7 @@ class _RegistrationState extends State<Registration> {
                         errorStyle: TextStyle(color: Colors.white),
                         errorText: _isNotValidate ? "Enter Proper Info" : null,
                         hintText: "Name",
-                        border: OutlineInputBorder(
+                        border: const OutlineInputBorder(
                             borderRadius:
                                 BorderRadius.all(Radius.circular(10.0)))),
                   ).p4().px24(),
@@ -164,16 +164,16 @@ class _RegistrationState extends State<Registration> {
                   ),
                   // ],
                   DropdownButton<String>(
-                    
-  items: <String>['Male', 'Female', 'Prefer Not To Say'].map((String value) {
-    return DropdownMenuItem<String>(
-      value: value,
-      child: Text(value),
-    );
-  }).toList(),
-  onChanged: (_) {},
-),
-    
+                    items: <String>['Male', 'Female', 'Prefer Not To Say']
+                        .map((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                    onChanged: (_) {},
+                  ),
+
                   HStack([
                     GestureDetector(
                       onTap: () => {registerUser()},

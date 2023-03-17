@@ -164,8 +164,8 @@ class _QuizScreenState extends State<QuizScreen> {
 
     return AlertDialog(
       title: Text(
-        title + " | Score is $score",
-        style: TextStyle(color: isPassed ? Colors.green : Colors.redAccent),
+        "$title | Score is $score \nthe scores are calculated based on the following research paper \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9583259/\"",
+        style: TextStyle(color: isPassed ? Colors.green : Colors.black54),
       ),
       content: ElevatedButton(
         child: const Text("Restart"),

@@ -134,19 +134,19 @@ class _HomeScreenState extends State<HomeScreen> {
               case 1:
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Tips()),
+                  MaterialPageRoute(builder: (context) => const MainMenu()),
                 );
                 break;
               case 2:
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Resources()),
+                  MaterialPageRoute(builder: (context) => const Resources()),
                 );
                 break;
               case 3:
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const MainMenu()),
+                  MaterialPageRoute(builder: (context) => const Tips()),
                 );
                 break;
               case 4:
@@ -161,18 +161,19 @@ class _HomeScreenState extends State<HomeScreen> {
             backgroundColor: Colors.white,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.apps_rounded),
-            label: "Tips",
+            icon: Icon(Icons.person),
+            label: "MainMenu",
             backgroundColor: Colors.white,
           ),
+
           BottomNavigationBarItem(
             icon: Icon(Icons.monitor_heart),
             label: "Resources",
             backgroundColor: Colors.white,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: "MainMenu",
+            icon: Icon(Icons.apps_rounded),
+            label: "Tips",
             backgroundColor: Colors.white,
           ),
           // BottomNavigationBarItem(icon: Icon(Icons.cloud),label: "Loading",backgroundColor: Colors.blueAccent,),
