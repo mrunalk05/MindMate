@@ -1,4 +1,4 @@
-/lib/apiCredentials/
+./lib/apiCredentials/
 
 # Miscellaneous
 *.class
