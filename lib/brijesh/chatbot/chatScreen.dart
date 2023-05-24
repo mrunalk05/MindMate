@@ -43,7 +43,7 @@ class _ChatScreenState extends State<ChatScreen> {
     print(chats);
     ChatMessage message = ChatMessage(
       text:
-          "Summarize this conversation and predict the : 1) user mental condition ans 2) brief me about the conversation. \"$chats\"",
+          "Summarize this conversation and predict the : 1) user mental condition ans 2) brief me about the conversation. alert me if the user mental condition is not good meaning it is showing sign of self harming or suicidal tendency, etc. the conversation is :  \"$chats\"",
       sender: "user",
       isImage: false,
     );
@@ -75,9 +75,10 @@ class _ChatScreenState extends State<ChatScreen> {
   // Link for api - https://beta.openai.com/account/api-keys
 
   void _sendMessage() async {
+    var promptHint = "assume you are a user assistant and you are chatting with a user. the user is asking you a question. there may be a chance that user mental condition is not well. make sure to not harm the user emotionally or mentally. guide them the proper medications or suggestions. make sure user do not self harm or commit any suicidal actions. the question is : ";
     if (_controller.text.isEmpty) return;
     ChatMessage message = ChatMessage(
-      text: _controller.text,
+      text: promptHint + _controller.text,
       sender: "user ",
       isImage: false,
     );
