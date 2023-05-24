@@ -17,6 +17,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int navigationIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,30 +25,39 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text("MindMate"),
       ),
       body: Container(
-        // decoration: const BoxDecoration(
-        //     image: DecorationImage(
-        //         image: AssetImage("assets/back.jpg"), fit: BoxFit.fill)),
+        decoration: const BoxDecoration(
+          // image: DecorationImage(
+          //   image: AssetImage("assets/back.jpg"),
+          //   fit: BoxFit.fill,
+          // ),
+        ),
         child: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: RichText(
                   textAlign: TextAlign.center,
                   softWrap: true,
                   text: const TextSpan(
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontStyle: FontStyle.italic,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 20),
-                      text:
-                          "\"Mental health is important at every stage of life, from childhood and adolescence through adulthood.\""),
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontStyle: FontStyle.italic,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 20,
+                    ),
+                    text:
+                    "\"Mental health is important at every stage of life, from childhood and adolescence through adulthood.\"",
+                  ),
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Image(image: AssetImage("assets/1.jpg"), height: 250),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Image.asset(
+                  "assets/1.jpg",
+                  height: 250,
+                ),
               ),
               const Text(
                 "Facts : ",
@@ -57,33 +67,40 @@ class _HomeScreenState extends State<HomeScreen> {
                 textScaleFactor: 1.2,
               ),
               Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: Container(
                   decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black),
-                      borderRadius: BorderRadius.all(Radius.circular(5))),
+                    border: Border.all(color: Colors.black),
+                    borderRadius: const BorderRadius.all(Radius.circular(5)),
+                  ),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: RichText(
                       softWrap: true,
                       text: const TextSpan(
-                          style: TextStyle(color: Colors.black),
-                          text:
-                              "1. Mental illness affects around 14% of the population in India.\n2. Stigma and discrimination against people with mental illness exist in India.\n3.Mental health services in India are now increasing with the use of MindMate.\n4. India has one of the highest suicide rates in the world, with around 230,000 deaths by suicide reported annually."),
+                        style: TextStyle(color: Colors.black),
+                        text:
+                        "1. Mental illness affects around 14% of the population in India.\n2. Stigma and discrimination against people with mental illness exist in India.\n3.Mental health services in India are now increasing with the use of MindMate.\n4. India has one of the highest suicide rates in the world, with around 230,000 deaths by suicide reported annually.",
+                      ),
                     ),
                   ),
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.all(18.0),
+              Padding(
+                padding: const EdgeInsets.all(18.0),
                 child: Text(
-                    textAlign: TextAlign.center,
-                    "Remember, You are not all alone, MindMate is your Companion",
-                    textScaleFactor: 1.2,
-                    style: TextStyle(fontWeight: FontWeight.w300)),
+                  "Remember, You are not all alone, MindMate is your Companion",
+                  textAlign: TextAlign.center,
+                  textScaleFactor: 1.2,
+                  style: TextStyle(fontWeight: FontWeight.w300),
+                ),
               ),
               CarouselSlider(
-                options: CarouselOptions(height: 200.0),
+                options: CarouselOptions(
+                  height: 200.0,
+                  enlargeCenterPage: true,
+                  autoPlay: true,
+                ),
                 items: [
                   "\"Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle.\" - Christian D. Larson",
                   "\"The only way to do great work is to love what you do.\" - Steve Jobs",
@@ -99,12 +116,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Center(
-                              child: Text(
-                            i,
-                            textAlign: TextAlign.center,
-                            style: const TextStyle(fontWeight: FontWeight.w600),
-                            textScaleFactor: 1.3,
-                          )),
+                            child: Text(
+                              i,
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(fontWeight: FontWeight.w600),
+                              textScaleFactor: 1.3,
+                            ),
+                          ),
                         ),
                       );
                     },
@@ -151,6 +169,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 break;
               case 4:
                 Navigator.pop(context);
+                break;
             }
           });
         },
@@ -165,7 +184,6 @@ class _HomeScreenState extends State<HomeScreen> {
             label: "MainMenu",
             backgroundColor: Colors.white,
           ),
-
           BottomNavigationBarItem(
             icon: Icon(Icons.monitor_heart),
             label: "Resources",
@@ -176,7 +194,6 @@ class _HomeScreenState extends State<HomeScreen> {
             label: "Tips",
             backgroundColor: Colors.white,
           ),
-          // BottomNavigationBarItem(icon: Icon(Icons.cloud),label: "Loading",backgroundColor: Colors.blueAccent,),
         ],
       ),
     );

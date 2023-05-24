@@ -23,7 +23,7 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   void initState() {
     chatGPT = OpenAI.instance
-        .build(token: apiToken, baseOption: HttpSetup(receiveTimeout: 60000));
+        .build(token: "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", baseOption: HttpSetup(receiveTimeout: 60000));
     super.initState();
   }
 
@@ -40,7 +40,7 @@ class _ChatScreenState extends State<ChatScreen> {
     for (ChatMessage msg in _messages) {
       chats = "${msg.sender} : ${msg.text}" + chats;
     }
-    print(chats);
+    // print(chats);
     ChatMessage message = ChatMessage(
       text:
           "Summarize this conversation and predict the : 1) user mental condition ans 2) brief me about the conversation. alert me if the user mental condition is not good meaning it is showing sign of self harming or suicidal tendency, etc. the conversation is :  \"$chats\"",
@@ -49,7 +49,7 @@ class _ChatScreenState extends State<ChatScreen> {
     );
 
     setState(() {
-      _messages.insert(0, message);
+      // _messages.insert(0, message);
       _isTyping = true;
     });
 
@@ -62,8 +62,9 @@ class _ChatScreenState extends State<ChatScreen> {
       Vx.log(response!.data!.last!.url!);
       insertNewData(response.data!.last!.url!, isImage: true);
     } else {
+      var promptHint = "assume you are a user assistant and you are chatting with a user. the user is asking you a question. there may be a chance that user mental condition is not well. make sure to not harm the user emotionally or mentally. guide them the proper medications or suggestions. make sure user do not self harm or commit any suicidal actions. the question is : ";
       final request =
-          CompleteText(prompt: message.text, model: kTranslateModelV3);
+          CompleteText(prompt:promptHint + message.text, model: kTranslateModelV3);
 
       final response = await chatGPT!.onCompleteText(request: request);
       Vx.log(response!.choices[0].text);
@@ -75,10 +76,9 @@ class _ChatScreenState extends State<ChatScreen> {
   // Link for api - https://beta.openai.com/account/api-keys
 
   void _sendMessage() async {
-    var promptHint = "assume you are a user assistant and you are chatting with a user. the user is asking you a question. there may be a chance that user mental condition is not well. make sure to not harm the user emotionally or mentally. guide them the proper medications or suggestions. make sure user do not self harm or commit any suicidal actions. the question is : ";
     if (_controller.text.isEmpty) return;
     ChatMessage message = ChatMessage(
-      text: promptHint + _controller.text,
+      text: _controller.text,
       sender: "user ",
       isImage: false,
     );
